@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiles</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:light" />
+    <style type="text/css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18pt;
+            font-weight: 300;
+            padding: 26px;
+            background-color: #FFF;
+            color: rgb(208, 211, 212);
+            margin: 0;
+        }
+
+        .dark-text,
+        .tile-heading {
+            color: rgb(51, 51, 51);
+        }
+
+        .no-margin {
+            margin: 0;
+        }
+
+        .tile-heading {
+            font-size: 25pt;
+            font-weight: 700;
+        }
+
+        .tiles-row {
+            margin-top: 18px;
+            margin-bottom: 90px;
+        }
+
+        .tiles-row > .tile:first-of-type {
+            padding-left: 0;
+        }
+
+        .tiles-row > .tile:nth-last-child(2) {
+            padding-right: 0;
+        }
+
+        .tile {
+            width: 33.3%;
+            padding: 0 15px;
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .tile > img {
+            width: 100%;
+            height: 250px;
+        }
+
+        .tile > p {
+            margin-top: 7px;
+        }
+
+        .divider {
+            border: none;
+            height: 7px;
+        }
+
+        .primary-color {
+            background-color: rgb(223, 70, 97);
+        }
+
+        .secondary-color {
+            background-color: rgb(0, 95, 131);
+        }
+
+        .tertiary-color {
+            background-color: rgb(107, 165, 57);
+        }
+
+        @media only screen and (max-width: 768px) {
+            .tile {
+                width: 100%;
+                padding: 0;
+                float: none;
+                margin-bottom: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h4 class="tile-heading no-margin">In your area</h4>
+        <hr class="divider primary-color"/>
+        <div class="tiles-row">
+            <div class="tile">
+                <img src="images/photo01.jpg" alt="River" />
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div class="tile">
+                <img src="images/photo02.jpg" alt="Lake"/>
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div class="tile">
+                <img src="images/photo03.jpg" alt="Frozen Tundra"/>
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </section>
+    <section>
+        <h4 class="tile-heading no-margin">News</h4>
+        <hr class="divider secondary-color"/>
+        <div class="tiles-row">
+            <div class="tile">
+                <img src="images/photo04.jpg" alt="Bridge" />
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div class="tile">
+                <img src="images/photo05.jpg" alt="Canoe on lake"/>
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div class="tile">
+                <img src="images/photo06.jpg" alt="Satelitte of river"/>
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </section>
+    <section>
+        <h4 class="tile-heading no-margin">Inspirational</h4>
+        <hr class="divider tertiary-color"/>
+        <div class="tiles-row">
+            <div class="tile">
+                <img src="images/photo07.jpg" alt="Golde Gate bridge" />
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div class="tile">
+                <img src="images/photo08.jpg" alt="Fog"/>
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div class="tile">
+                <img src="images/photo09.jpg" alt="Plains river" />
+                <h4 class="tile-heading no-margin">Cras mattis consectetur</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamos sagittis faucibus dolor auctor.</p>
+                <h5 class="dark-text">Donec ullamcorper.</h5>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </section>
+</body>
+</html>
