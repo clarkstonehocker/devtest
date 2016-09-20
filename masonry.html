@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Masonry</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:light" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="masonry-data.json"></script>
+    <style type="text/css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18pt;
+            font-weight: 300;
+            padding: 36px 90px;
+            background-color: rgb(208, 211, 212);
+            color: rgb(51, 51, 51);
+            margin: 0;
+        }
+        article {
+            -moz-column-count: 2;
+            -webkit-column-count: 2;
+            column-count: 2;
+            -moz-column-gap: 18px;
+            -webkit-column-gap: 18px;
+            column-gap: 18px;
+        }
+
+        .tile {
+            width: 100%;
+            display: inline-block;
+            padding: 18px;
+            margin-bottom: 18px;
+            box-sizing: border-box;
+            background-color: #FFF;
+            border: 1px solid rgb(51, 51, 51);
+        }
+
+        .tile > img {
+            width: 100%;
+            height: 250px;
+        }
+
+        .tile-heading {
+            font-size: 25pt;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .no-image-rule {
+            margin-bottom: 18px;
+            width: 25%;
+            height: 7px;
+            background-color: rgb(223, 70, 97);
+        }
+
+        #load_more {
+            background: transparent;
+            cursor: pointer;
+            margin-top: 90px;
+            padding: 10px 18px;
+            border: 1px solid rgb(51, 51, 51);
+            border-radius: 2px;
+            font-size: 18pt;
+        }
+
+        #load_more:hover {
+            background-color: #FFF;
+        }
+
+        #load_button_container {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Container to hold masonry tiles -->
+    <article id="tiles-container"></article>
+
+    <script type="text/javascript">
+        // Get data from variable obtained from masonry-data.json file via script tag in head
+        var data = JSON.parse(JSON.stringify(masonry_data));
+
+        var length = data.tiles.length;
+
+        // Store container to add tiles to so we only have to lookup once
+        var tilesContainer = $('#tiles-container');
+
+        // Loop through tiles array and add them to the container
+        $.each(data.tiles, function (index, tile) {
+            var image = '<div class="no-image-rule" ></div>';
+            if (tile.image.length > 0) {
+                image = '<img src="' + value.image + '"/>';
+            }
+            var heading = '<h3 class="tile-heading">' + tile.heading + '</h3>';
+            var content = '<p class="tile-content">' + tile.content + '</p>';
+            var caption = '<p class="tile-caption">Donec ullamcorper</p>';
+            var meta = '<meta content="' + value.meta + '" />';
+            if (index < 5) {
+                tilesContainer.append('<section class="tile">' + image + heading + content + caption + meta + '</section>');
+            }
+            else  {
+                var button = '<div id="load_button_container"><button id="load_more" onclick="loadMoreTiles()">Load More</button></div>';
+                tilesContainer.after(button);
+                return false; // break loop since we're done
+            }
+        });
+
+        // Function called when Load More button is clicked. Loads more masonry tiles on page
+        function loadMoreTiles () {
+            for (var i = 5; i < length; i++) {
+                var tile = data.tiles[i];
+                var image = '<div class="no-image-rule" ></div>';
+                if (tile.image.length > 0) {
+                    image = '<img src="' + tile.image + '"/>';
+                }
+                var heading = '<h3 class="tile-heading">' + tile.heading + '</h3>';
+                var content = '<p class="tile-content">' + tile.content + '</p>';
+                var caption = '<p class="tile-caption">Donec ullamcorper</p>';
+                var meta = '<meta content="' + tile.meta + '" />';
+                document.querySelector('#load_button_container').style.display = 'none';
+                tilesContainer.append('<section class="tile">' + image + heading + content + caption + meta + '</section>');
+            }
+
+            tilesContainer = null;
+        }
+    </script>
+</body>
+</html>
